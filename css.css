@@ -1,0 +1,25 @@
+table th:nth-child(even){
+    background-color: brown;
+}
+
+table td:first-child,
+table th:first-child{
+    background-color: aqua;
+}
+
+table td:last-child,
+table th:last-child{
+    background-color: blueviolet;
+}
+
+
+table td,
+table th,
+table tr{
+    border: 10px solid, pink;
+    
+}
+.error{
+    color: red;
+    border: 10px, solid, red;
+}
