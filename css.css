@@ -17,6 +17,7 @@ table td,
 table th,
 table tr{
     border: 10px solid, pink;
+    border-collapse: collapse;
     
 }
 .error{

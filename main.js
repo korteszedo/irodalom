@@ -74,10 +74,8 @@ form.addEventListener('submit', function(e){
 
 
 
-    if(validacio1(nev, korszak)){
-        
-
-
+    
+    if(validatefields(nev, korszak)){
 
         if(checkvalue == false){
             szerelem2value = undefined;
@@ -104,6 +102,7 @@ form.addEventListener('submit', function(e){
         render();
         form.reset()
     }
+    
 })
 
 
@@ -142,25 +141,25 @@ function render() {
       tablebody.appendChild(sor);
     }
 
-    function validacio1(nev, korszak){
-        let valasz = false;
-        if(nev.innerHTML == ''){
-            const parent = nev.parentElement;
+}
 
-            const error = parent.querySelector('.error');
-            error.innerHTML = 'töltsd ki'
-            valasz = false;
-            
-        }
+function validatefields(nev, korszak){
+    let result = true;
 
-        if(korszak.innerHTML == ''){
-            const parent = korszak.parentElement;
+    if(nev.value == ''){
+        const error = document.getElementById('nev_error');
+        error.innerHTML = 'ki kell töletni'
 
-            const error = parent.querySelector('.error');
-            error.innerHTML = 'töltsd ki'
-            valasz = false;
-        }
-        return valasz;
+        result = false;
     }
+
+    if (korszak.value == ''){
+        const error = document.getElementById('korszak_error');
+        error.innerHTML = 'ki kell töletni'
+
+        result = false;
+    }
+
+    return result;
 }
   
